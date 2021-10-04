@@ -1,7 +1,10 @@
 import { createUseStyles } from "vue-jss";
 const styles = createUseStyles({
-	wrapper: {
-		width: "100%",
+	line: {
+		width: 2,
+		background: "black",
+		height: 500,
+		position: "relative",
 	},
 });
 export default styles;

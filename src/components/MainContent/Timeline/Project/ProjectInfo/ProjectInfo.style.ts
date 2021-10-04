@@ -1,6 +1,6 @@
 import { createUseStyles } from "vue-jss";
 const styles = createUseStyles({
-	timelineWrapper: {
+	projectInfoWrapper: {
 		display: "flex",
 		flexDirection: "column",
 		justifyContent: "center",

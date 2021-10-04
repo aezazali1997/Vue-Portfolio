@@ -7,28 +7,6 @@ export default defineComponent({
 	components: {
 		MainContent,
 	},
-	apollo: {
-		data: gql`
-			query {
-				data: UI__getAllProjects {
-					id
-					title
-					subtitle
-					summary
-					projectType
-					start
-					end
-					role
-					challenge
-					technologies
-					thumbnail
-					url
-					images
-				}
-			}
-		`,
-	},
-
 	setup() {
 		const classes = styles();
 		return {
