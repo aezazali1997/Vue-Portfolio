@@ -4,7 +4,9 @@ import ProjectImage from "./ProjectImage/ProjectImage.vue";
 import ProjectPipe from "./ProjectPipe/ProjectPipe.vue";
 export default defineComponent({
 	name: "ProjectTimeline",
-	props: {},
+	props: {
+		side: Boolean,
+	},
 	components: { ProjectImage, ProjectPipe },
 	setup() {
 		const classes = styles();

@@ -1,6 +1,6 @@
 <template>
 	<div :class="classes.projectInfoWrapper">
-		<ProjectTimeline />
+		<ProjectTimeline :side="side" />
 	</div>
 </template>
 <script lang="ts" src="./ProjectInfo.ts" />

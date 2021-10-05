@@ -1,5 +1,5 @@
 <template>
-	<div :class="classes.dateWrapper">
+	<div :class="[date ? classes.dateWrapper : classes.none]">
 		<div>{{ date }}</div>
 	</div>
 </template>

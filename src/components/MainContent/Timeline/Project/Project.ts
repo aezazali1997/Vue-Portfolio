@@ -4,7 +4,10 @@ import ProjectDate from "./ProjectDate/ProjectDate.vue";
 import ProjectInfo from "./ProjectInfo/ProjectInfo.vue";
 export default defineComponent({
 	name: "Project",
-	props: {},
+	props: {
+		date: String,
+		side: Boolean,
+	},
 	components: {
 		ProjectDate,
 		ProjectInfo,
