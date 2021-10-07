@@ -6,7 +6,7 @@ import TimelineTop from "./TimelineTop/TimelineTop.vue";
 import gql from "graphql-tag";
 import { useQuery } from "@vue/apollo-composable";
 import { TimelineModel } from "@/models/Timeline.model";
-import moment from "moment";
+import { projectYear } from "@/interfaces/ProjectsYear.interface";
 export default defineComponent({
   name: "Timeline",
   props: {},
@@ -16,7 +16,7 @@ export default defineComponent({
     TimelineTop,
   },
   setup() {
-    let Projects: TimelineModel[] = [];
+    const Projects = ref<projectYear[]>([]);
     const classes = styles();
     const { result, loading, error } = useQuery(gql`
       query {
@@ -31,18 +31,13 @@ export default defineComponent({
     `);
     watch(result, (value) => {
       const timelineObj = TimelineModel.deserializeList(value);
-      Projects = timelineObj;
-      console.log(Projects);
+      Projects.value = timelineObj;
+      console.log(Projects.value);
     });
-
-    const dateComputed = (date: string) => {
-      return moment(date).format("YYYY");
-    };
     return {
       classes,
       loading,
       error,
-      dateComputed,
       Projects,
     };
   },

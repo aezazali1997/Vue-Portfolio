@@ -2,10 +2,10 @@
   <div :class="classes.timelineWrapper">
     <TimelineTop />
     <div v-if="loading">Loading</div>
-    <div v-for="(project, index) in Projects" :key="project.id">
-      <!-- project is not getting -->
+    <div v-for="(projectByYear, index) in Projects" :key="index">
       <Project
-        :date="dateComputed(project.start)"
+        :date="projectByYear.year"
+        :projects="projectByYear.projects"
         :side="index % 2 === 0 ? true : false"
       />
     </div>
