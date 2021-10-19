@@ -1,21 +1,24 @@
 import moment from "moment";
-import { projectYear } from "@/interfaces/ProjectsYear.interface";
+import { IProjectYear } from "@/interfaces/ProjectsYear.interface";
+import { IApiResult } from "@/interfaces/ApiResult.interface";
 export class TimelineModel {
+  public id: string;
   public title: string;
   public summary: string;
   public start: string;
   public thumbnail: string;
   public technologies: [string];
   constructor(timeLineObj?: Partial<TimelineModel>) {
+    this.id = timeLineObj?.id || "";
     this.title = timeLineObj?.title || "";
     this.summary = timeLineObj?.summary || "";
     this.start = timeLineObj?.start || "";
     this.thumbnail = timeLineObj?.thumbnail || "";
     this.technologies = timeLineObj?.technologies || [""];
   }
-  static deserializeList(apiResult: any): projectYear[] {
+  static deserializeList(apiResult: IApiResult): IProjectYear[] {
     const timelineModelObj: TimelineModel[] = [];
-    const apiResponse = apiResult["Projects"];
+    const apiResponse = apiResult.Projects;
     if (Array.isArray(apiResponse)) {
       apiResponse.forEach((timelineObj: TimelineModel) => {
         timelineModelObj.push(timelineObj);
@@ -36,9 +39,9 @@ export class TimelineModel {
     const dateComp = moment(date).format("YYYYY");
     return Number(dateComp);
   }
-  static filterByYear(apiResult: TimelineModel[]): projectYear[] {
+  static filterByYear(apiResult: TimelineModel[]): IProjectYear[] {
     let indexYear = 0;
-    const projectByYear: projectYear[] = [
+    const projectByYear: IProjectYear[] = [
       {
         year: this.convNum(apiResult[0].start),
         projects: [apiResult[0]],

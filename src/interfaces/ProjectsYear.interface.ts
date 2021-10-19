@@ -1,5 +1,5 @@
 import { TimelineModel } from "@/models/Timeline.model";
-export interface projectYear {
+export interface IProjectYear {
   year: number;
   projects: TimelineModel[];
 }

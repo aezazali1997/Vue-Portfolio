@@ -1,7 +1,7 @@
 import { createUseStyles } from "vue-jss";
 const styles = createUseStyles({
   imgContainerLeft: {
-    border: "2px solid black",
+    border: "2px solid #379683",
     width: 350,
     height: 350,
     left: -400,
@@ -20,7 +20,7 @@ const styles = createUseStyles({
   },
   imgContainerRight: {
     cursor: "pointer",
-    border: "2px solid black",
+    border: "2px solid #379683",
     width: 350,
     height: 350,
     right: -400,
@@ -32,7 +32,7 @@ const styles = createUseStyles({
       opacity: 1,
     },
     "&:hover $image": {
-      transform: "scale(1.1)",
+      transform: "scale(1.1,1)",
       opacity: ".5",
     },
   },
@@ -41,18 +41,19 @@ const styles = createUseStyles({
     display: "block",
     height: "80%",
     transition: "all .3s ease-in-out",
+    overflow: "hidden",
   },
   mainTxt: {
     position: "absolute",
     fontSize: "1.5rem",
     padding: ".5rem",
     color: "#000",
-    top: "40%",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%,-50%)",
     border: "1px solid black",
-    left: "40%",
-    transform: "translate(-30%,-20%)",
     opacity: 0,
-    width: "auto",
+    width: "max-content",
     transition: "opacity .3s ease-in-out",
   },
   desc: {

@@ -1,4 +1,6 @@
 <template>
-	<div><h1 :class="classes.yellowTxt">Contact US page</h1></div>
+  <div>
+    <Form />
+  </div>
 </template>
 <script lang="ts" src="./Contact.ts" />

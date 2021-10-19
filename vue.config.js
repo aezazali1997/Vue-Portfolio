@@ -1,7 +1,7 @@
 module.exports = {
   pluginOptions: {
     apollo: {
-      lintGQL: false
-    }
-  }
-}
+      lintGQL: false,
+    },
+  },
+};
